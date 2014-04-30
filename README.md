@@ -13,7 +13,7 @@ Built in plain HTML, Javascript and CSS
 
 ## Projects and People
 
-The [projects](http://opengovhacknight.org/proyectos.html) and [people](http://opengovhacknight.org/personas.html) pages are powered by [Github](https://github.com/) and [civic-json-worker](https://github.com/open-city/civic-json-worker),
+The [projects](http://hackingmty.org/proyectos.html) and [people](http://hackingmty.org/personas.html) pages are powered by [Github](https://github.com/) and [civic-json-worker](https://github.com/open-city/civic-json-worker),
 a script we run every 5 minutes that fetches data from the [Github API](http://developer.github.com/).
 
 The JSON files are backed up every hour in the [civic-json-files](https://github.com/open-city/civic-json-files) repository.
