@@ -1,6 +1,6 @@
-# Open Gov Hack Night
+# Hacking Monterrey
 
-Website for Chicago's weekly Open Gov Hack Night
+Website for Monterrey's biweekly Open Gov Hack Night
 
 Built in plain HTML, Javascript and CSS
 
@@ -13,7 +13,9 @@ Built in plain HTML, Javascript and CSS
 
 ## Projects and People
 
-The [projects](http://opengovhacknight.org/projects.html) and [people](http://opengovhacknight.org/people.html) pages are powered by [Github](https://github.com/) and [civic-json-worker](https://github.com/open-city/civic-json-worker), 
-a script we run every 5 minutes that fetches data from the [Github API](http://developer.github.com/). 
+The [projects](http://opengovhacknight.org/proyectos.html) and [people](http://opengovhacknight.org/personas.html) pages are powered by [Github](https://github.com/) and [civic-json-worker](https://github.com/open-city/civic-json-worker),
+a script we run every 5 minutes that fetches data from the [Github API](http://developer.github.com/).
 
 The JSON files are backed up every hour in the [civic-json-files](https://github.com/open-city/civic-json-files) repository.
+
+This project was forked from [Open Gov Hack Night](http://opengovhacknight.org), thanks for all their hard work.
