@@ -8,6 +8,15 @@
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
 
+    {% if site.owner.twitter %}<!-- Twitter Cards -->
+    {% if page.image.feature %}<meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="{{ site.url }}/images/{{ page.image.feature }}">
+    {% else %}<meta name="twitter:card" content="summary">
+    <meta name="twitter:image:src" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">{% endif %}
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title | truncate: 70 }}{% else %}{{ site.title | truncate: 70 }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description | truncate: 200 }}{% else %}{{ site.description | truncate: 200 }}{% endif %}">
+    <meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
+
     <!-- Open Graph support -->
     <meta property="og:locale" content="es_MX">
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
