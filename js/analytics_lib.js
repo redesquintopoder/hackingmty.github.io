@@ -1,3 +1,6 @@
+---
+layout: nil
+---
 /*!
  * Google Analytics Library
  * https://github.com/open-city/google-analytics-lib
@@ -10,7 +13,7 @@
  *
  */
 
-var analyticsTrackingCode = 'UA-50583819-1'; //enter your tracking code here
+var analyticsTrackingCode = '{{ site.google_analytics }}'; //enter your tracking code here
 
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', analyticsTrackingCode]);
