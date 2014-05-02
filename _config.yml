@@ -3,6 +3,16 @@ url: http://hackingmty.org
 description: Hacking cívico en la ciudad de Monterrey
 gh_pages: https://github.com/hackingmty/hackingmty.github.io
 
+owner:
+  name: Hacking Monterrey
+  email: hola@hackingmty.org
+  # Social networking links used in footer. Update and remove as you like.
+  github: hackingmty
+  #twitter: hackingmty
+  #instagram: hackingmty
+  #facebook: hackingmty
+  google_plus: "https://plus.google.com/u/0/communities/117199441327944932251"
+
 navigation:
 - text: Inicio
   url: /

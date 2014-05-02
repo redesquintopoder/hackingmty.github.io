@@ -1,3 +1,10 @@
         <div class="footer">
+          <div class="social-icons pull-left">
+            {% if site.owner.github %}<a href="http://github.com/{{ site.owner.github }}" title="{{ site.owner.name}} en Github" target="_blank"><i class="icon-github icon-2x"></i></a>{% endif %}
+            {% if site.owner.google_plus %}<a href="{{ site.owner.google_plus }}" title="{{ site.owner.name}} en Google+" target="_blank"><i class="icon-google-plus icon-2x"></i></a>{% endif %}
+            {% if site.owner.instagram %}<a href="http://instagram.com/{{ site.owner.instagram }}" title="{{ site.owner.name}} en Instagram" target="_blank"><i class="icon-instagram icon-2x"></i></a>{% endif %}
+            {% if site.owner.facebook %}<a href="http://facebook.com/{{ site.owner.facebook }}" title="{{ site.owner.name}} en Facebook" target="_blank"><i class="icon-facebook icon-2x"></i></a>{% endif %}
+            {% if site.owner.twitter %}<a href="http://twitter.com/{{ site.owner.twitter }}" title="{{ site.owner.name}} en Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>{% endif %}
+          </div><!-- /.social-icons -->
           <p class='pull-right'>&copy; {{ site.title }} {{ site.time | date: '%Y' }} | <a href='{{ site.gh_pages }}'><i class='icon-github'></i> <em>Pull requests</em> bienvenidos!</a></p>
         </div>
