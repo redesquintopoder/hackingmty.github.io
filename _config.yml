@@ -1,0 +1,24 @@
+title: Hacking Monterrey
+url: http://localhost:4000
+gh_pages: https://github.com/hackingmty/hackingmty.github.io
+
+navigation:
+- text: Inicio
+  url: /
+- text: Eventos
+  url: /eventos/
+- text: Proyectos
+  url: /proyectos/
+- text: Personas
+  url: /personas/
+- text: Recursos
+  url: /recursos/
+
+google_analytics: UA-50583819-1
+
+# Set this up like this to make it easier to dev this locally -- evz
+# data_host = 'http://civic-json.datamade.dev.work'
+data_host: http://worker.opengovhacknight.org
+
+# In order to Jekyll be compatible with Mustache we need to change Mustache's delimiter
+setMustacheDelimiter: "{{=<% %>=}}"

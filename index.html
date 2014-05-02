@@ -1,46 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+---
+layout: page
+title: Bienvenido
+description: "Hacking Monterrey es un equipo entusiasta en brindar soluciones cívicas en Monterrey."
+tags: [civic, hacking, monterrey]
+---
 
-    <title>Hacking Monterrey</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/custom.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="container">
-      <div class='col-md-10 col-md-offset-1'>
-        <div class="header">
-          <ul class="nav nav-pills pull-right">
-            <li class="active"><a href="index.html">Inicio</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="proyectos.html">Proyectos</a></li>
-            <li><a href="personas.html">Personas</a></li>
-            <li><a href="recursos.html">Recursos</a></li>
-          </ul>
-          <h3 class="text-muted"><a href="index.html" >Hacking Monterrey</a></h3>
-        </div>
 
         <div class="jumbotron">
             <!-- Necesitamos un logo de Codeando Mexico con fondo transparente -->
             <!--p><a class='img-thumbnail' href='http://codeandomexico.org'><img src='images/sponsors/codeandomexico.png' alt='Codeando México' /></a><br />presenta</p-->
-          <h1>Hacking Monterrey</h1>
+          <h1>{{ site.title }}</h1>
           <p>Un sitio en Monterrey para construir, compartir y aprender sobre
           tecnologías que buscan brindar <em>soluciones cívicas</em>.</p>
 
@@ -67,15 +36,15 @@
             estas noches están orientadas para aquellas personas que deseen:</p>
 
             <ul>
-              <li>Trabajar en <a href='proyectos.html'>proyectos de carácter
+              <li>Trabajar en <a href='/proyectos/'>proyectos de carácter
                   cívico</a></li>
               <li>Iniciar nuevos proyectos o unirse a proyectos existentes
               (aquellos que no sean <em>programadores</em> igualmente son más
               que bienvenidos)</li>
               <li>Aportar ideas y obtener ayuda de otras <a
-                  href='personas.html'>personas</a> con experiencia en el
+                  href='/personas/'>personas</a> con experiencia en el
               ámbito técnico y de <em>gobierno abierto</em></li>
-              <li><a href='eventos.html'>Aprender</a> acerca de <em>Open
+              <li><a href='/eventos/'>Aprender</a> acerca de <em>Open
                   Data</em>, <em>ciudades inteligentes</em> y <em>gobierno
                   abierto</em></li>
             </ul>
@@ -106,9 +75,9 @@
             <p><strong>No hay ningún problema!</strong> En las <em>Civic Hack
                 Night</em> promovemos a las personas sin conocimientos técnicos
             a hacer equipo y aprender de los <a
-                href="personas.html">desarrolladores y diseñadores de nuestra
+                href="/personas/">desarrolladores y diseñadores de nuestra
                 <em>comunidad</em></a>. Muchas veces, los mejores <a
-                href="proyectos.html">proyectos cívicos</a> provienen de un
+                href="/proyectos/">proyectos cívicos</a> provienen de un
             equipo de personas con perfiles diversos.</p>
 
             <p><strong>Recuerde</strong>, para crear una gran aplicación, se
@@ -119,7 +88,7 @@
             <div class='well'>
               <h4>
                 <i class='icon-calendar'></i>
-                Hacking Monterrey
+                {{ site.title }}
               </h4>
               <p><img class='img-thumbnail' src='images/el_cowork_map.png'></p>
               <p>
@@ -267,21 +236,3 @@
             <p>Got questions about the event or have a project to present? <a href='mailto:info@opencityapps.org'>Email us</a>.</p>
           </div>
         </div-->
-
-        <div class="footer">
-          <p class='pull-right'>&copy; Hacking Monterrey 2014 | <a href='https://github.com/hackingmty/hackingmty.github.io'><i class='icon-github'></i> ¡<em>Pull requests</em> bienvenidos!</a></p>
-        </div>
-      </div>
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/analytics_lib.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.3.1/holder.js"></script>
-
-  </body>
-</html>
