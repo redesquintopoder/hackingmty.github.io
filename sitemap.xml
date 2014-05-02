@@ -1,23 +1,12 @@
+---
+layout: nil
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.navigation %}
   <url>
-    <loc>http://hackingmty.org</loc>
-    <priority>1.0</priority>
+    <loc>{{ site.url }}{{ page.url }}</loc>
+    <priority>{% if page.url == '/' %}1.0{% else %}0.9{% endif %}</priority>
   </url>
-  <url>
-    <loc>http://hackingmty.org/eventos.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>http://hackingmty.org/proyectos.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>http://hackingmty.org/personas.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>http://hackingmty.org/recursos.html</loc>
-    <priority>0.9</priority>
-  </url>
+  {% endfor %}
 </urlset>
