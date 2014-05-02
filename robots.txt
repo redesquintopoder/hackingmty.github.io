@@ -1,3 +1,6 @@
-Sitemap: http://hackingmty.org/sitemap.xml
+---
+layout: nil
+---
+Sitemap: {{ site.url }}/sitemap.xml
 User-agent: *
 Disallow:
