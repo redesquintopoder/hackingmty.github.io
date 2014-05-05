@@ -4,7 +4,7 @@
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="{{ site.url }}/js/bootstrap.min.js"></script>
     <script src="{{ site.url }}/js/analytics_lib.js"></script>
-    {% if page.url == "/index.html" %}
+    {% if page.url == "/index.html" or page.categories.first == "eventos" %}
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script src="{{ site.url}}/js/map.js"></script>
     {% endif %}

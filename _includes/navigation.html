@@ -1,13 +1,11 @@
           <ul class="nav nav-pills pull-right">
-            {% if page.layout == 'page' %}
-              {% for link in site.navigation %}
-                {% assign active = nil %}
-                {% if page.url == link.url %}
-                  {% assign active = 'active' %}
-                {% endif %}
+            {% for link in site.navigation %}
+              {% assign active = nil %}
+              {% if page.url == link.url %}
+                {% assign active = 'active' %}
+              {% endif %}
 
-                <li{% if active != nil %} class="{{ active }}"{% endif %}><a href="{{ site.url }}{{ link.url }}" title="{{ link.text }}">{{ link.text }}</a></li>
-              {% endfor %}
-            {% endif %}
+              <li{% if active != nil %} class="{{ active }}"{% endif %}><a href="{{ site.url }}{{ link.url }}" title="{{ link.text }}">{{ link.text }}</a></li>
+            {% endfor %}
           </ul>
 

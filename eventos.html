@@ -6,13 +6,13 @@ events: true
 ---
 
 
-        <h1>{{ page.title }} <small id='event-count'></small></h1>
+        <h1>{{ page.title }} <small id='event-count'>{{ site.categories['eventos'].size }}</small></h1>
+
         <p>Resumen de <em>hack nights</em> recientes y las que se avecinan.
         Podrás encontrar enlaces a proyectos, personas y datos que de alguna
-        manera hicieron eco en la reunión.</p>
-
-        <p><a class='btn btn-success' href='http://www.meetup.com/open-data-monterrey/'>Confirma tú asistencia al próximo evento</a></p>
-        <br>
+        manera hicieron eco en la reunión.
+        <br />
+        <a href='/feed/'><i class='icon-rss'></i> RSS feed</a></p>
 
         <table id='hack-night-events' class='table'>
           <thead>
@@ -22,5 +22,28 @@ events: true
             </tr>
           </thead>
           <tbody>
+          {% for post in site.categories['eventos'] %}
+            <tr>
+              <td class='nowrap'>
+                <div class='well text-center'>
+                  <time datetime='{{ post.date | date: "%Y-%m-%d" }}'>
+                    <h3>{{ post.date | date: "%b %d" }}</h3>
+                    <h4>{{ post.date | date: "%Y" }}</h4>
+                  </time>
+                  {% if site.time <= post.date %}
+                    <a class='btn btn-success' href='http://www.meetup.com/open-data-monterrey/'>RSVP &raquo;</a>
+                  {% endif %}
+                </div>
+              </td>
+              <td>
+                <h3><small>#{{ post.event_id }}</small> <a href='{{ post.url }}'>{{ post.title }}</a></h3>
+                {{ post.content }}
+                <ul class='list-inline'>
+                  <li><span class='text-muted'>Patrocinante</span></li>
+                  <li><a href='{{ post.sponsor_url }}'>{{ post.sponsor }}</a></li>
+                </ul>
+              </td>
+            </tr>
+          {% endfor %}
           </tbody>
         </table>

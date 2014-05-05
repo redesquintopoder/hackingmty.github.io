@@ -1,0 +1,61 @@
+---
+layout: page
+---
+
+<h3>
+  {% if page.previous.url %}
+    <a href='{{ page.previous.url }}'><i class='icon-chevron-sign-left'></i></a>
+  {% endif %}
+  {{ page.date | date: "%b %d, %Y" }}
+  {% if page.next.url %}
+    <a href='{{ page.next.url }}'><i class='icon-chevron-sign-right'></i></a>
+  {% endif %}
+</h3>
+<h1><small>#{{ page.event_id }}</small> {{ page.title }}</h1>
+<hr />
+
+<div class='row'>
+  <div class='col-md-7'>
+
+    {{ content }}
+
+    {% if site.time <= page.date %}
+      <a class='btn btn-success' href='http://www.meetup.com/open-data-monterrey/'>RSVP &raquo;</a>
+    {% endif %}
+
+    {% if page.links %}
+      <hr />
+      <h4>Enlaces</h4>
+      <ul>
+      {% for link in page.links %}
+        <li>{{ link }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    </div>
+
+    <div class='col-md-5'>
+      <div class='well'>
+        <h4>
+          <i class='icon-calendar'></i>
+          {{ site.title }}
+        </h4>
+        <div id="map"></div>
+        <p>
+          7 <abbr title="post meridiem">p. m.</abbr> cada miércoles (quincenal)<br />
+          <a href='http://www.elcowork.com/'>El Cowork</a><br />
+          <a href='http://goo.gl/VyEXww'>Av. Frida Kahlo 195 Suite 1205, San Pedro Garza García</a><br />
+        </p>
+        <p><strong>Patrocinante</strong> {{ page.sponsor }}</p>
+    </div>
+  </div>
+</div>
+
+{% if site.disqus_shortname and page.comments %}
+<div class='row'>
+  <div class='col-md-12'>
+    <div id="disqus_thread"></div><!-- /#disqus_thread -->
+    {% include disqus_comments.html %}
+  </div>
+</div>
+{% endif %}
