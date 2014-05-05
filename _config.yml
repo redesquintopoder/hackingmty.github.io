@@ -1,5 +1,5 @@
 title: Hacking Monterrey
-url: http://hackingmty.org
+url: http://localhost:4000
 description: Hacking cívico en la ciudad de Monterrey
 gh_pages: https://github.com/hackingmty/hackingmty.github.io
 
@@ -15,7 +15,7 @@ owner:
 
 navigation:
 - text: Inicio
-  url: /
+  url: /index.html
 - text: Eventos
   url: /eventos/
 - text: Proyectos
@@ -33,3 +33,5 @@ data_host: http://worker.opengovhacknight.org
 
 # In order to Jekyll be compatible with Mustache we need to change Mustache's delimiter
 setMustacheDelimiter: "{{=<% %>=}}"
+
+encoding: utf-8
