@@ -31,6 +31,13 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ site.url }}/css/custom.css" rel="stylesheet">
+    {% if page.url == "/index.html" %}
+    <link href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" rel="stylesheet" />
+
+    <style type="text/css">
+        #map { height: 250px; }
+    </style>
+    {% endif %}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
