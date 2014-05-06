@@ -42,6 +42,12 @@ events: true
                   <li><span class='text-muted'>Patrocinante</span></li>
                   <li><a href='{{ post.sponsor_url }}'>{{ post.sponsor }}</a></li>
                 </ul>
+                {% if post.links %}
+                <ul class='list-inline'>
+                    <li><span class='text-muted'>Enlaces</span></li>
+                    <li>{{ post.links | join: ', ' }}</li>
+                </ul>
+                {% endif %}
               </td>
             </tr>
           {% endfor %}
