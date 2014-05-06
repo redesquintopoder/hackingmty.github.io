@@ -19,8 +19,21 @@ layout: page
 
     {{ content }}
 
-    {% if site.time <= page.date %}
-      <a class='btn btn-success' href='http://www.meetup.com/open-data-monterrey/'>RSVP &raquo;</a>
+    {% assign meetup = nil %}
+    {% if page.meetup %}
+        {% assign meetup = page.meetup %}
+    {% else %}
+        {% if site.owner.meetup %}
+            {% assign meetup = site.owner.meetup %}
+        {% endif %}
+    {% endif %}
+
+    {% if meetup != nil %}
+        {% if site.time <= page.date %}
+        <a class='btn btn-success' href='{{ meetup }}'>RSVP &raquo;</a>
+        {% else %}
+        <p>Puedes ver la convocatoria que hicimos para esta reunión en nuestro <a href="{{ meetup }}" title="Convocatoria al {{ page.title }}">meetup</a>.</p>
+        {% endif %}
     {% endif %}
 
     {% if page.links %}
