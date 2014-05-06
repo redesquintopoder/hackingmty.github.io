@@ -42,3 +42,6 @@ encoding: utf-8
 
 # http://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:title/
+# Maruku is obsolete
+# https://help.github.com/articles/migrating-your-pages-site-from-maruku
+markdown: kramdown
