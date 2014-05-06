@@ -26,6 +26,8 @@ navigation:
   url: /personas/
 - text: Recursos
   url: /recursos/
+- text: Preguntas
+  url: /puf/
 
 google_analytics: UA-50583819-1
 

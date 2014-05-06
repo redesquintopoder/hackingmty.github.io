@@ -1,0 +1,25 @@
+    <script src="{{ site.url }}/js/mustache.js"></script>
+    <script src="{{ site.url }}/data/faq.js"></script>
+    <script>
+    var template = "{{site.setMustacheDelimiter}}\
+      <%#entries%>\
+      <div class='panel panel-default'>\
+        <div class='panel-heading'>\
+          <h4 class='panel-title'>\
+            <a data-toggle='collapse' data-parent='#accordion' href='#<%slug%>'>\
+              <%question%>\
+            </a>\
+          </h4>\
+        </div>\
+        <div id='<%slug%>' class='panel-collapse collapse in'>\
+          <div class='panel-body'>\
+            <%{answer}%>\
+          </div>\
+        </div>\
+      </div>\
+      <%/entries%>";
+
+      $("#faq-count").html(faq.entries.length);
+
+      $("#accordion").append(Mustache.render(template, faq));
+    </script>
