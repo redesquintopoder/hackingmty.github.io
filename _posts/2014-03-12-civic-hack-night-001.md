@@ -9,6 +9,7 @@ sponsor: <a href="http://codeandomexico.org">Codeando México</a>
 links:
   - <a href="http://elcowork.com">El Cowork</a>
 event_id: 1
+meetup: http://www.meetup.com/Open-Data-Monterrey/events/169828952/
 ---
 
 Celebramos el inicio oficial de la brigada y se realizó en las instalaciones de

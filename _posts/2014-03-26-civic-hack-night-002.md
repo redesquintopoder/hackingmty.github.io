@@ -10,6 +10,7 @@ links:
   - <a href="http://preguntale.org">¡Pregúntale!</a>
   - <a href="http://cuantodebemos.mx/">¿Cuánto debemos?</a>
 event_id: 2
+meetup: http://www.meetup.com/Open-Data-Monterrey/events/172024912/
 ---
 
 Presentación de algunas *apps* cívicas activas en Monterrey, algunas de ellas

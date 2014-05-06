@@ -9,6 +9,7 @@ sponsor: <a href="http://codeandomexico.org">Codeando México</a>
 links:
   - <a href="https://trello.com/b/GSDC6GpV/">Planificación en Trello</a>
 event_id: 3
+meetup: http://www.meetup.com/Open-Data-Monterrey/events/172025732/
 ---
 
 Pendiente de rellenar.
