@@ -1,25 +1,65 @@
+    <script src="{{ site.url }}/js/moment.min.js"></script>
+    <script src="{{ site.url }}/js/jquery.dataTables.min.js"></script>
+    <script src="{{ site.url }}/js/jquery.dataTables.sorting.js"></script>
+    <script src="{{ site.url }}/js/jquery.address.js"></script>
+    <script src="{{ site.url }}/js/jquery.scrollto.js"></script>
     <script src="{{ site.url }}/js/mustache.js"></script>
-    <script src="{{ site.url }}/data/faq.js"></script>
+    <script src="{{ site.url }}/js/jquery.csv-0.71.min.js"></script>
+
     <script>
-    var template = "{{site.setMustacheDelimiter}}\
-      <%#entries%>\
-      <div class='panel panel-default'>\
-        <div class='panel-heading'>\
-          <h4 class='panel-title'>\
-            <a data-toggle='collapse' data-parent='#accordion' href='#<%slug%>'>\
-              <%question%>\
-            </a>\
-          </h4>\
-        </div>\
-        <div id='<%slug%>' class='panel-collapse collapse in'>\
-          <div class='panel-body'>\
-            <%{answer}%>\
-          </div>\
-        </div>\
-      </div>\
-      <%/entries%>";
+    function get_google_doc_data(doc_id){
+        var doc_url = "https://docs.google.com/spreadsheet/pub?key=" + doc_id + "&output=csv";
+        return $.ajax({
+            url: doc_url
+        });
+      }
 
-      $("#faq-count").html(faq.entries.length);
+      function populate_table(doc_id, table_el, count_el, template, dt_sorting, dt_columns, search_qs){
+        $.when(get_google_doc_data(doc_id)).then(
+          function(csv){
+            var json = $.csv.toObjects(csv);
+            var data_count = 0;
+            $.each(json, function(i, obj){
+                if(obj.title != ""){
+                  data_count++;
+                  $("#" + table_el + " tbody").append(Mustache.render(template, obj));
+                }
+            });
 
-      $("#accordion").append(Mustache.render(template, faq));
+            $('#' + count_el).html(data_count);
+
+            // initialize datatables
+            var data_table = $('#' + table_el).dataTable( {
+              "aaSorting": dt_sorting,
+              "aoColumns": dt_columns,
+              "bInfo": false,
+              "bPaginate": false
+            });
+
+            // allows linking directly to searches
+            if ($.address.parameter(search_qs) != undefined) {
+              data_table.fnFilter( $.address.parameter(search_qs) );
+              $('#' + table_el + '_filter input').ScrollTo();
+            }
+
+            // when someone types a search value, it updates the URL
+            $('#' + table_el + '_filter input').keyup(function(e){
+              $.address.parameter(search_qs, $('#' + table_el + '_filter input').val());
+              return false;
+            });
+          }
+        )
+      }
+
+    var faq_template = "{{site.setMustacheDelimiter}}\
+      <tr>\
+        <td>\
+          <h4><%question%></h4>\
+        </td>\
+        <td>\
+        <p><%answer%></p>\
+        </td>\
+      </tr>";
+
+      populate_table("0AoyIKc2oe9ujdG40aTI1V1czamZDLVhDSjktVlJjdGc", "faq-table", "faq-count", faq_template, [ [1,'asc'] ], [ null, null, null ], 'faq-search');
     </script>
